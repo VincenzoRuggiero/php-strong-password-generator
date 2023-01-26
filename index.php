@@ -1,4 +1,6 @@
-
+<?php
+    include 'functions.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,9 +12,6 @@
 </head>
 <body>
 
-
-
-
     <form action="index.php" method="get">
         <label for="pw_length">Lunghezza password:</label>
         <input type="text" name="pw_length">
@@ -23,16 +22,4 @@
 </body>
 </html>
 
-<?php 
 
-    
-
-    function getPassword(){
-        $length = intval($_GET['pw_length']);
-        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#!?%&';
-        for($i = 0; $i < $length; $i++){
-            $randomPw = substr(str_shuffle($chars), 0, $length);
-        }
-        return $randomPw;
-    }
-?>
